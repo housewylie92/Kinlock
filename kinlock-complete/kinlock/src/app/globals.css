@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  /* Kinlock design tokens */
+  --ink: #1d2340;        /* primary text — deep, not pure black */
+  --indigo: #35407a;     /* brand primary — trust, calm */
+  --indigo-dark: #262d59;
+  --gold: #d9a441;       /* accent — warmth, the "clasp" color */
+  --teal: #3f8f8a;       /* secondary — live sync / connection */
+  --paper: #f5f6fa;      /* background — cool, not warm cream */
+  --mist: #e1e4ee;       /* borders / dividers */
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-indigo: var(--indigo);
+  --color-indigo-dark: var(--indigo-dark);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Respect reduced-motion preferences for the interlock animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
